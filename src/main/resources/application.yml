@@ -1,0 +1,47 @@
+server:
+  port: 9000
+  error:
+    include-stacktrace: never
+    include-message: never
+
+firebase:
+  projectId: migui-396204
+  credentialsPath: D:/clavesGCP/migui-396204-fe0fcf9dc7f9.json
+
+prometeo:
+
+  Host: banking.sandbox.prometeoapi.com
+  Accept: application/json
+  Content-Type: application/x-www-form-urlencoded
+  X-API-Key: FNRpzZSMOna0CSAe0aWJUSbO4ffL8u5auavR5i5Nb0ujiiB3p3WgSoikMOPBGEFl
+
+rutas:
+  usuarios:
+    saldos: migui/web/com/usuarios/saldos
+
+  reportes:
+    transferencias: migui/web/com/reportes/transferencias
+
+spring:
+  application:
+    name: transferencias-bancarias
+
+  sleuth:
+    otel:
+      config:
+        trace-id-ratio-based: 1.0
+      exporter:
+        otlp:
+          endpoint: http://localhost:4317
+  
+
+# Configuración de Retries
+resilience4j:
+  retry:
+    instances:
+      myRetry:
+        maxAttempts: 3
+        waitDuration: 300ms
+        retryExceptions: java.lang.Exception
+        ignoreExceptions: java.lang.NullPointerException
+        failAfterMaxAttempts: true
