@@ -9,7 +9,6 @@ firebase:
   credentialsPath: D:/clavesGCP/migui-396204-fe0fcf9dc7f9.json
 
 prometeo:
-
   Host: banking.sandbox.prometeoapi.com
   Accept: application/json
   Content-Type: application/x-www-form-urlencoded
