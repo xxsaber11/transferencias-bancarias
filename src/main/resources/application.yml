@@ -5,8 +5,8 @@ server:
     include-message: never
 
 firebase:
-  projectId: migui-396204
-  credentialsPath: D:/clavesGCP/migui-396204-fe0fcf9dc7f9.json
+  projectId: prueba-396204
+  credentialsPath: D:/clavesGCP/prueba-396204-fe0fcf9dc7f9.json
 
 prometeo:
   Host: banking.sandbox.prometeoapi.com
@@ -16,10 +16,10 @@ prometeo:
 
 rutas:
   usuarios:
-    saldos: migui/web/com/usuarios/saldos
+    saldos: prueba/web/com/usuarios/saldos
 
   reportes:
-    transferencias: migui/web/com/reportes/transferencias
+    transferencias: prueba/web/com/reportes/transferencias
 
 spring:
   application:
