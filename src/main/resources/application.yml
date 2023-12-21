@@ -8,11 +8,9 @@ firebase:
   projectId: prueba-396204
   credentialsPath: D:/clavesGCP/prueba-396204-fe0fcf9dc7f9.json
 
-prometeo:
-  Host: banking.sandbox.prometeoapi.com
-  Accept: application/json
-  Content-Type: application/x-www-form-urlencoded
-  X-API-Key: FNRpzZSMOna0CSAe0aWJUSbO4ffL8u5auavR5i5Nb0ujiiB3p3WgSoikMOPBGEFl
+MercadoPago:
+  Access-token: TEST-8677390478692229-122100-0d463c6230b4661fdac2fcbcadf56cd2-1586311014
+  Public-Key: TEST-d6002a79-8a79-4227-94a2-c05debc1c525
 
 rutas:
   usuarios:
