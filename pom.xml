@@ -14,7 +14,7 @@
 	<name>transferencias-bancarias</name>
 	<description>Demo project for Spring Boot</description>
 	<properties>
-		<java.version>21</java.version>
+		<java.version>17</java.version>
 	</properties>
 	<dependencies>
 		<dependency>
@@ -46,6 +46,29 @@
             <artifactId>spring-boot-starter-test</artifactId>
             <scope>test</scope>
         </dependency>
+        <dependency>
+            <groupId>com.google.cloud</groupId>
+            <artifactId>google-cloud-firestore</artifactId>
+            <version>2.6.0</version> <!-- Reemplaza con la versión más reciente -->
+        </dependency>
+        <dependency>
+            <groupId>javax.persistence</groupId>
+            <artifactId>javax.persistence-api</artifactId>
+            <version>2.2</version> <!-- Reemplaza con la versión más reciente -->
+        </dependency>
+        <!-- Dependencia para servlets (si es necesario) -->
+        <dependency>
+            <groupId>javax.servlet</groupId>
+            <artifactId>javax.servlet-api</artifactId>
+            <version>4.0.1</version> <!-- Reemplaza con la versión más reciente -->
+            <scope>provided</scope>
+        </dependency>
+                <!-- Dependencia para la anotación @NotNull -->
+                <dependency>
+                    <groupId>com.sun.istack</groupId>
+                    <artifactId>istack-commons-runtime</artifactId>
+                    <version>4.0.0</version> <!-- Reemplaza con la versión más reciente -->
+                </dependency>
         <dependency>
             <groupId>io.projectreactor</groupId>
             <artifactId>reactor-test</artifactId>
