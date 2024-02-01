@@ -22,10 +22,10 @@ public class CurrencyService {
     RestTemplate restTemplate;
 
 
-    @Value("${my.property.url}")
+    @Value("${MercadoPago.property.url}")
     private String url;
 
-    @Value("${my.property.authorization}")
+    @Value("${MercadoPago.property.authorization}")
     private String authorization;
 
     /***

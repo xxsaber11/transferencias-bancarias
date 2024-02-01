@@ -24,30 +24,30 @@ import java.util.List;
 @Transactional
 public class PreferencesServices {
 
-    @Value("${my.property.authorization}")
+    @Value("${MercadoPago.property.authorization}")
     private String authorization;
 
-    @Value("${my.property.url}")
+    @Value("${MercadoPago.property.url}")
     private String url;
 
     @Autowired
     RestTemplate restTemplate;
 
-    @Autowired
-    PhonePreferenceRepository phonePreferenceRepository;
+    //@Autowired
+    //PhonePreferenceRepository phonePreferenceRepository;
 
-    @Autowired
-    PayerPreferenceRepository payerPreferenceRepository;
+    //@Autowired
+    //PayerPreferenceRepository payerPreferenceRepository;
 
 
-    @Autowired
-    IdetentificationPreferencesRepository identificationRepository;
+    //@Autowired
+    //IdetentificationPreferencesRepository identificationRepository;
 
-    @Autowired
-    ItemPreferenceRepository itemPreferenceRepository;
+    //@Autowired
+    //ItemPreferenceRepository itemPreferenceRepository;
 
-    @Autowired
-    PreferencesRepository preferencesRepository;
+    //@Autowired
+    //PreferencesRepository preferencesRepository;
 
 
     public PreferencesResponseDto createPreferences(RootRequestDto rootRequestDto) {
@@ -79,8 +79,8 @@ public class PreferencesServices {
 
         phoneNew.setArea_code(response.getBody().payer.phone.area_code);
         phoneNew.setNumber(response.getBody().payer.phone.number);
-        phonePreferenceRepository.save(phoneNew);
-        payer.setPhone(phonePreferenceRepository.findById(phoneNew.getId()).get());
+        //phonePreferenceRepository.save(phoneNew);
+        //payer.setPhone(phonePreferenceRepository.findById(phoneNew.getId()).get());
 
 //        List<Identification> identificationList = new ArrayList<>();
 //
@@ -89,8 +89,9 @@ public class PreferencesServices {
 
         identification.setType(response.getBody().payer.identification.type);
         identification.setNumber(response.getBody().payer.identification.number);
-        identificationRepository.save(identification);
-        payer.setIdentification(identificationRepository.findById(identification.getId()).get());
+        //TODO: arreglar
+        //identificationRepository.save(identification);
+        //payer.setIdentification(identificationRepository.findById(identification.getId()).get());
 
 
         response.getBody().items.forEach(itemResponseDto -> {
@@ -102,7 +103,7 @@ public class PreferencesServices {
             item.setUnit_price(itemResponseDto.unit_price);
             itemList.add(item);
             preferencesResponseDto.setItems(itemList);
-            itemPreferenceRepository.save(item);
+            //itemPreferenceRepository.save(item);
         });
 
         payer.setEmail(response.getBody().payer.email);
@@ -111,14 +112,14 @@ public class PreferencesServices {
         payer.setDateCreated(response.getBody().date_created);
         preferencesResponseDto.setPayer(payer);
 
-        payerPreferenceRepository.save(payer);
-        preferences.setPayer(payerPreferenceRepository.getById(payer.getId()));
+        //payerPreferenceRepository.save(payer);
+        //preferences.setPayer(payerPreferenceRepository.getById(payer.getId()));
         preferences.setExternal_reference(response.getBody().external_reference);
         preferences.setSandbox_init_point(response.getBody().init_point);
         preferencesResponseDto.setUrlInit(response.getBody().init_point);
 
 
-        preferencesRepository.save(preferences);
+        //preferencesRepository.save(preferences);
 
 
         return preferencesResponseDto;

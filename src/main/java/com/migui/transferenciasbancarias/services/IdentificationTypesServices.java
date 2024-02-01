@@ -1,7 +1,7 @@
 package com.migui.transferenciasbancarias.services;
 
 import com.migui.transferenciasbancarias.model.IdentificationTypes;
-import com.migui.transferenciasbancarias.repository.IdentificationTypesRepository;
+//import com.migui.transferenciasbancarias.repository.IdentificationTypesRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.*;
@@ -17,8 +17,8 @@ import java.util.List;
 public class IdentificationTypesServices {
 
 
-    @Autowired
-    IdentificationTypesRepository identificationTypesRepository;
+    //@Autowired
+    //IdentificationTypesRepository identificationTypesRepository;
 
 
     @Autowired
@@ -26,10 +26,10 @@ public class IdentificationTypesServices {
 
 
 
-    @Value("${my.property.url}")
+    @Value("${MercadoPago.property.url}")
     private String url;
 
-    @Value("${my.property.authorization}")
+    @Value("${MercadoPago.property.authorization}")
     private   String authorization;
 
     /***
@@ -51,13 +51,14 @@ public class IdentificationTypesServices {
                 identificationTypesNew.setMin_length(identificationTypes.getMin_length());
                 identificationTypesNew.setName(identificationTypes.getName());
                 identificationTypesNew.setId(identificationTypes.getId());
-                identificationTypesRepository.save(identificationTypesNew);
+                //identificationTypesRepository.save(identificationTypesNew);
                 System.out.println(identificationTypes.getName());
             });
         }
 
-
-        return identificationTypesRepository.findAll();
+        //TODO: correguir
+        //return identificationTypesRepository.findAll();
+        return null;
     }
 
 
