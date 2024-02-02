@@ -16,11 +16,11 @@ import java.util.Arrays;
 @Service
 @Transactional
 public class PaymentServices {
-    @Value("${MercadoPago.property.authorization}")
+    @Value("${mercadopago.property.authorization}")
     private   String authorization;
 
 
-    @Value("${MercadoPago.property.url}")
+    @Value("${mercadopago.property.url}")
     private   String url;
     @Autowired
     RestTemplate restTemplate;

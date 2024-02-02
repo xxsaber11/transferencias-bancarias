@@ -20,10 +20,10 @@ import java.util.List;
 public class PaymentMethodsServices {
 
 
-    @Value("${MercadoPago.property.authorization}")
+    @Value("${mercadopago.property.authorization}")
     private   String authorization;
 
-    @Value("${MercadoPago.property.url}")
+    @Value("${mercadopago.property.url}")
     private   String url;
 
 //    @Autowired

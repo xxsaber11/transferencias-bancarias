@@ -24,10 +24,10 @@ import java.util.List;
 @Transactional
 public class PreferencesServices {
 
-    @Value("${MercadoPago.property.authorization}")
+    @Value("${mercadopago.property.authorization}")
     private String authorization;
 
-    @Value("${MercadoPago.property.url}")
+    @Value("${mercadopago.property.url}")
     private String url;
 
     @Autowired
