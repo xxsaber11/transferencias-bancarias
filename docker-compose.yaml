@@ -1,0 +1,19 @@
+version: '3'
+
+services:
+  transferencias-bancarias:
+    image: eclipse-temurin:17-jdk-jammy
+    container_name: transferencias-bancarias
+    volumes:
+      - /logs:/logs
+      - ./src/main/resources/application.yml:/conf/application.yml
+      - ./target/transferencias-bancarias-0.0.1-SNAPSHOT.jar:/app/transferencias-bancarias.jar
+    command: ["java", "-jar", "/app/transferencias-bancarias.jar"]
+    environment:
+      - spring.config.location=/conf/application.yml
+      - TZ=America/Buenos_Aires
+    restart: unless-stopped
+    ports:
+      - "9007:9007"
+    networks:
+      - gamma

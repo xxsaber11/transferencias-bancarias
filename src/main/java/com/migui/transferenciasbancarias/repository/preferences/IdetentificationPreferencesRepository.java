@@ -1,5 +1,5 @@
 package com.migui.transferenciasbancarias.repository.preferences;
-/*
+/* 
 import com.migui.transferenciasbancarias.model.preferences.Identification;
 import com.migui.transferenciasbancarias.model.preferences.Phone;
 import org.springframework.data.jpa.repository.JpaRepository;
@@ -11,4 +11,4 @@ public interface IdetentificationPreferencesRepository extends JpaRepository<Ide
 
     Optional<Identification> findAllByType(String type);
 }
- */
+*/
