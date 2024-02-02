@@ -8,7 +8,8 @@ server:
 
 firebase:
   projectId: prueba-396204
-  credentialsPath: D:/clavesGCP/migui-396204-fe0fcf9dc7f9.json
+  credentialsPath: externos/clavesGCP/migui-396204-fe0fcf9dc7f9.json
+  #credentialsPath: D:/clavesGCP/migui-396204-fe0fcf9dc7f9.json
   
 
 mercadopago:

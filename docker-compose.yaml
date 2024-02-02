@@ -1,5 +1,9 @@
 version: '3'
 
+volumes:
+  servicios:
+    external: true
+
 services:
   transferencias-bancarias:
     image: eclipse-temurin:17-jdk-jammy
@@ -8,6 +12,7 @@ services:
       - /logs:/logs
       - ./src/main/resources/application.yml:/conf/application.yml
       - ./target/transferencias-bancarias-0.0.1-SNAPSHOT.jar:/app/transferencias-bancarias.jar
+      - servicios:/externos
     command: ["java", "-jar", "/app/transferencias-bancarias.jar"]
     environment:
       - spring.config.location=/conf/application.yml
