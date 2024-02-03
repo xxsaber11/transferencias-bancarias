@@ -74,6 +74,7 @@ public class PreferencesServices {
 
         //List<Phone> phoneList = new ArrayList<>();
 
+        //TODO: se debe buscar el telefono en firestore
         // phoneList = phonePreferenceRepository.findAll();
 
 
